@@ -32,3 +32,4 @@ yarn start
 
 
 ## Welcome to Up and enjoy the website!
+Link: https://cicada-up.netlify.app
