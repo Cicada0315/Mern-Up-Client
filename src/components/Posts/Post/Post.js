@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
-import { deletePost, likePost, updateView } from '../../../actions/postsAction'
+import { deletePost, likePost } from '../../../actions/postsAction'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import ThumbsUp from '../../../images/ThumbsUp.png'
@@ -21,8 +21,13 @@ const Post=(props)=>{
     }
 
     const handleLike=()=>{
-        props.setCurrentPostId(post._id);
-        dispatch(likePost(post._id, {...post, likes: [...post.likes, userinfo.result._id] }));
+        if(userinfo){
+            props.setCurrentPostId(post._id);
+            dispatch(likePost(post._id, {...post, likes: [...post.likes, userinfo.result._id] }));
+        }else{
+            alert("You have to singin to like this post")
+        }
+        
     }
     
     const handleDelete=()=>{
