@@ -37,6 +37,16 @@ export const updatePost = (id, post) => async (dispatch) => {
     }
 };
 
+export const updateView = (id, post) => async (dispatch) => {
+    try {
+        const res = await api.updateView(id, post);
+        dispatch({ type: 'UPDATE_POST', payload: res.data });
+    } catch (error) {
+        console.log(error.response);
+        alert(error.response.data.message);
+    }
+};
+
 export const deletePost = (id) => async (dispatch) => {
     try {
         await api.deletePost(id);

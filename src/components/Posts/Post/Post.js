@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
-import { deletePost, likePost } from '../../../actions/postsAction'
+import { deletePost, likePost, updateView } from '../../../actions/postsAction'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import ThumbsUp from '../../../images/ThumbsUp.png'

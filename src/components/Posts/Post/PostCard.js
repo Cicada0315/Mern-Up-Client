@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Card, Col, Row } from 'react-bootstrap';
 import ThumbsUp from '../../../images/ThumbsUp.png'
 import View from '../../../images/view.png'
-import { updatePost } from '../../../actions/postsAction'
+import { updatePost, updateView } from '../../../actions/postsAction'
 
 const PostCard = (props) => {
     const dispatch=useDispatch();
@@ -12,7 +12,7 @@ const PostCard = (props) => {
     const { title, name, files, likes, _id, createdAt, views } =props.post;
 
     const routeChange = () =>{
-        dispatch(updatePost(_id, {...props.post, views: views+1 }));
+        dispatch(updateView(_id, {...props.post, views: views+1 }));
         history.push(`/posts/${_id}`);
     }
     return (
