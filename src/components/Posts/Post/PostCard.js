@@ -18,13 +18,13 @@ const PostCard = (props) => {
     return (
         <Card onClick={routeChange} key={_id}>
             <Card.Body>
-            <Row>
-                <Col>
-                    <Card.Img variant="top" src={files} className="img-fluid"/>
+            <Row >
+                <Col xs={6} md={4} lg={4} className="text-center">
+                    <img src={files} className="img-fluid"/>
                 </Col>
-                <Col>
+                <Col xs={6} md={8} lg={8}>
                     <Card.Title>{title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{name} {createdAt.split("T")[0]}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">{name} <br/> {createdAt.split("T")[0]}</Card.Subtitle>
                     <img src={View} width="15" height="15" alt="view"/>{views}
                     <img src={ThumbsUp} width="15" height="15" alt="like"/>{likes.length}{" "}
                 </Col>
