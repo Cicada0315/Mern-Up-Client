@@ -20,7 +20,7 @@ const PostCard = (props) => {
             <Card.Body>
             <Row >
                 <Col xs={6} md={4} lg={4} className="text-center">
-                    <img src={files} width="100" height="150"/>
+                    <img src={files} className="img-fluid"/>
                 </Col>
                 <Col xs={6} md={8} lg={8}>
                     <Card.Title>{title}</Card.Title>

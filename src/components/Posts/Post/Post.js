@@ -38,13 +38,13 @@ const Post=(props)=>{
 
     return (
         !post? <div className="bg-light">The Post doesn't exist</div>:
-        <div className="bg-light">
+        <div className="bg-light" style={{padding: "15px"}}>
             {(userinfo && userinfo.result._id === post.creator) &&
                 (<div style={{textAlign: "right"}}><Button variant="outline-primary" onClick={handleEdit}><img src={Edit} width="20" height="20" alt="edit"/>Edit</Button>
             <Button variant="outline-primary" onClick={handleDelete}><img src={Delete} width="20" height="20" alt="delete"/>Delete</Button></div>)}
             <h4>{post.name}</h4>   
             <h1>{post.title}</h1>
-            <p>{post.createdAt.split("T")[0]}  Views {post.views}</p>
+            <p className="text-muted">{post.createdAt.split("T")[0]}  Views {post.views}</p>
 
             <img src={post.files} alt="file" className="img-fluid"/>
             <p>{post.content}</p>
